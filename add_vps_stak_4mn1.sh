@@ -6,7 +6,7 @@ YELLOW='\033[0;93m'
 RED='\033[0;31m'
 NC='\033[0m'
 
-echo -e ${YELLOW}"Welcome to the Northern Automated Update 2.4.0 (4in1)."${NC}
+echo -e ${YELLOW}"Welcome to the Northern Automated Update 2.6.0 (4in1)."${NC}
 echo "Please wait while updates are performed..."
 sleep 5
 echo "Stopping first node, please wait...";
@@ -22,8 +22,8 @@ echo "Removing binaries..."
 cd /usr/local/bin
 rm -rf northernd northern-cli northern-tx
 echo "Downloading latest binaries"
-wget https://github.com/northern-community/Northern/raw/c35f59dd79c6173e495f08b319dd5518f4b74a61/northern-cli.tar.gz
-tar -xzf northern-cli.tar.gz
+wget https://github.com/northern-community/Northern/releases/download/untagged-8d4d75f283535b10dcc5/northern2.6.0.tar.gz
+tar -xzf northern2.6.0.tar.gz
 sudo chmod 755 -R  /usr/local/bin/northern*
 rm -rf northern-cli.tar.gz
 echo "Deleting old nodes from node config files"

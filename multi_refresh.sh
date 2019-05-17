@@ -22,7 +22,7 @@ echo "Removing binaries..."
 cd /usr/local/bin
 rm -rf northernd northern-cli northern-tx
 echo "Downloading latest binaries"
-wget https://github.com/northern-community/scripts/raw/af03c29e1dce38ed3650790f256d2a8e2b6a3fa7/northern2.6.0.tar.gz
+wget https://github.com/northern-community/Northern/releases/download/2.6.0/northern2.6.0.tar.gz
 tar -xzf northern2.6.0.tar.gz
 sudo chmod 755 -R  /usr/local/bin/northern*
 rm -rf northern-cli.tar.gz
@@ -80,4 +80,3 @@ echo -e ${GREEN}"If you think that this script helped in some way, feel free to 
 echo "Northerns address: K8cKv7AdK8Z8TVvADKKSTT8MvwmbnGxR3j"
 echo "LTC address: LbF8hSejc8oc4L81CrzdYengYBpr6xNczn"
 echo "The END. You can close now the SSH terminal session";
-

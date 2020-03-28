@@ -2,9 +2,9 @@ cd ~
 cd /usr/local/bin
 ./northern-cli stop
 rm -rf northernd northern-cli northern-tx
-wget https://github.com/northern-community/Northern/releases/download/3.1.0/northern_linux.3_1_0.tar.gz
-tar -xzf northern_linux.3_1_0.tar.gz
-rm -rf northern_linux.3_1_0.tar.gz
+wget https://github.com/northern-community/Northern/releases/download/3.2.0/northern_linux.3_2_0.tar.gz
+tar -xzf northern_linux.3_2_0.tar.gz
+rm -rf northern_linux.3_2_0.tar.gz
 echo "staking=1" >> /home/northern/.northern/northern.conf
 ./northernd -daemon
 ./northern-cli -datadir=/home/northern/.northern getnewaddress

@@ -61,7 +61,7 @@ echo "Syncing first node, please wait...";
 northernd -datadir=/home/northern/.northern -daemon -staking=1 -masternode=1 
 until northern-cli -datadir=/home/northern/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 northern-cli -datadir=/home/northern/.northern getnewaddress
-northern-cli -datadit=/home/northern/.northern masternode debug
+northern-cli -datadir=/home/northern/.northern masternode debug
 echo -e ${GREEN}"First node is fully synced. Your masternode is running!"${NC}
 echo -e ${RED}"This is your VPS Staking wallet address for mn 1!"${NC}
 sleep 5
@@ -69,7 +69,7 @@ echo "Syncing second node, please wait...";
 northernd -datadir=/home/northern2/.northern -daemon -staking=1 -masternode=1
 until northern-cli -datadir=/home/northern2/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 northern-cli -datadir=/home/northern2/.northern getnewaddress
-northern-cli -datadit=/home/northern2/.northern masternode debug
+northern-cli -datadir=/home/northern2/.northern masternode debug
 echo -e ${GREEN}"Second node is fully synced. Your masternode is running!"${NC}
 echo -e ${RED}"This is your VPS Staking wallet address for mn 2!"${NC}
 sleep 5
@@ -77,7 +77,7 @@ echo "Syncing third node, please wait...";
 northernd -datadir=/home/northern3/.northern -daemon -staking=1 -masternode=1
 until northern-cli -datadir=/home/northern3/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 northern-cli -datadir=/home/northern3/.northern getnewaddress
-northern-cli -datadit=/home/northern3/.northern masternode debug
+northern-cli -datadir=/home/northern3/.northern masternode debug
 echo -e ${GREEN}"Third node is fully synced. Your masternode is running!"${NC}
 echo -e ${RED}"This is your VPS Staking wallet address for mn 3!"${NC}
 sleep 5
@@ -85,7 +85,7 @@ echo "Syncing fourth node, please wait...";
 northernd -datadir=/home/northern4/.northern -daemon -staking=1 -masternode=1
 until northern-cli -datadir=/home/northern4/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 northern-cli -datadir=/home/northern4/.northern getnewaddress
-northern-cli -datadit=/home/northern4/.northern masternode debug
+northern-cli -datadir=/home/northern4/.northern masternode debug
 echo -e ${GREEN}"Fourth node is fully synced. Your masternode is running!"${NC}
 echo -e ${RED}"This is your VPS Staking wallet address for mn 4!"${NC}
 sleep 5

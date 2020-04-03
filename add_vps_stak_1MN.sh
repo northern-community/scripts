@@ -8,7 +8,7 @@ rm -rf northern_linux.3_2_0.tar.gz
 echo "staking=1" >> /home/northern/.northern/northern.conf
 ./northernd -daemon
 ./northern-cli -datadir=/home/northern/.northern getnewaddress
-./northern-cli -datadit=/home/northern/.northern masternode debug
+./northern-cli -datadir=/home/northern/.northern masternode debug
 echo -e ${RED}"This is your VPS Staking wallet address for mn 1!"${NC}
 sleep 30
 ./northern-cli getinfo

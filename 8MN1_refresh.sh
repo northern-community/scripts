@@ -45,27 +45,27 @@ sed -i '/addnode/d' /home/northern7/.northern/northern.conf
 sed -i '/addnode/d' /home/northern8/.northern/northern.conf
 
 echo "Adding new nodes..."
-echo "addnode=45.77.62.203" >> /home/northern/.northern/northern.conf
+echo "addnode=155.138.213.33" >> /home/northern/.northern/northern.conf
 echo "addnode=207.148.3.46" >> /home/northern/.northern/northern.conf
 echo "addnode=136.243.185.24" >> /home/northern/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern/.northern/northern.conf
 
-echo "addnode=45.77.62.203" >> /home/northern2/.northern/northern.conf
+echo "addnode=155.138.213.33" >> /home/northern2/.northern/northern.conf
 echo "addnode=207.148.3.46" >> /home/northern2/.northern/northern.conf
 echo "addnode=136.243.185.24" >> /home/northern2/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern2/.northern/northern.conf
 
-echo "addnode=45.77.62.203" >> /home/northern3/.northern/northern.conf
+echo "addnode=155.138.213.33" >> /home/northern3/.northern/northern.conf
 echo "addnode=207.148.3.46" >> /home/northern3/.northern/northern.conf
 echo "addnode=136.243.185.24" >> /home/northern3/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern3/.northern/northern.conf
 
-echo "addnode=45.77.62.203" >> /home/northern4/.northern/northern.conf
+echo "addnode=155.138.213.33" >> /home/northern4/.northern/northern.conf
 echo "addnode=207.148.3.46" >> /home/northern4/.northern/northern.conf
 echo "addnode=136.243.185.24" >> /home/northern4/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern4/.northern/northern.conf
 
-echo "addnode=45.77.62.203" >> /home/northern5/.northern/northern.conf
+echo "addnode=155.138.213.33" >> /home/northern5/.northern/northern.conf
 echo "addnode=207.148.3.46" >> /home/northern5/.northern/northern.conf
 echo "addnode=136.243.185.24" >> /home/northern5/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern5/.northern/northern.conf
@@ -86,32 +86,33 @@ echo "addnode=136.243.185.24" >> /home/northern8/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern8/.northern/northern.conf
 
 echo "Syncing first node, please wait...";
-northernd -datadir=/home/northern/.northern -daemon
+northernd -datadir=/home/northern/.northern -daemon -resync
+
 until northern-cli -datadir=/home/northern/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"First node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing second node, please wait...";
-northernd -datadir=/home/northern2/.northern -daemon
+northernd -datadir=/home/northern2/.northern -daemon -resync
 until northern-cli -datadir=/home/northern2/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Second node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing third node, please wait...";
-northernd -datadir=/home/northern3/.northern -daemon
+northernd -datadir=/home/northern3/.northern -daemon -resync
 until northern-cli -datadir=/home/northern3/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Third node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing fourth node, please wait...";
-northernd -datadir=/home/northern4/.northern -daemon
+northernd -datadir=/home/northern4/.northern -daemon -resync
 until northern-cli -datadir=/home/northern4/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Fourth node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing fith node, please wait...";
-northernd -datadir=/home/northern5/.northern -daemon
+northernd -datadir=/home/northern5/.northern -daemon -resync
 until northern-cli -datadir=/home/northern5/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"5th node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing 6th node, please wait...";
-northernd -datadir=/home/northern6/.northern -daemon
+northernd -datadir=/home/northern6/.northern -daemon -resync
 until northern-cli -datadir=/home/northern6/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"6th node is fully synced. Your masternode is running!"${NC}
 sleep 5

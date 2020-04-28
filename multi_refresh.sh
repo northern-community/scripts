@@ -22,10 +22,10 @@ echo "Removing binaries..."
 cd /usr/local/bin
 rm -rf northernd northern-cli northern-tx
 echo "Downloading latest binaries"
-wget https://github.com/northern-community/Northern/releases/download/3.2.1/northern_linux.3_2_1.tar.gz
-tar -xzf northern_linux.3_2_1.tar.gz
+wget https://github.com/northern-community/Northern/releases/download/3.3.1/northern_linux.3_3_1.tar.gz
+tar -xzf northern_linux.3_3_1.tar.gz
 sudo chmod 755 -R  /usr/local/bin/northern*
-rm -rf northern_linux.3_2_1.tar.gz
+rm -rf northern_linux.3_3_1.tar.gz
 echo "Deleting old nodes from node config files"
 sed -i '/addnode/d' /home/northern/.northern/northern.conf
 sed -i '/addnode/d' /home/northern2/.northern/northern.conf
@@ -54,22 +54,22 @@ echo "addnode=136.243.185.24" >> /home/northern4/.northern/northern.conf
 echo "addnode=107.173.141.125" >> /home/northern4/.northern/northern.conf
 
 echo "Syncing first node, please wait...";
-northernd -datadir=/home/northern/.northern -daemon
+northernd -datadir=/home/northern/.northern -daemon -resync
 until northern-cli -datadir=/home/northern/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"First node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing second node, please wait...";
-northernd -datadir=/home/northern2/.northern -daemon
+northernd -datadir=/home/northern2/.northern -daemon -resync
 until northern-cli -datadir=/home/northern2/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Second node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing third node, please wait...";
-northernd -datadir=/home/northern3/.northern -daemon
+northernd -datadir=/home/northern3/.northern -daemon -resync
 until northern-cli -datadir=/home/northern3/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Third node is fully synced. Your masternode is running!"${NC}
 sleep 5
 echo "Syncing fourth node, please wait...";
-northernd -datadir=/home/northern4/.northern -daemon
+northernd -datadir=/home/northern4/.northern -daemon -resync
 until northern-cli -datadir=/home/northern4/.northern mnsync status | grep -m 1 '"IsBlockchainSynced": true,'; do sleep 1 ; done > /dev/null 2>&1
 echo -e ${GREEN}"Fourth node is fully synced. Your masternode is running!"${NC}
 sleep 5
